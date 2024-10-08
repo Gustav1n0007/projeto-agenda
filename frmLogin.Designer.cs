@@ -58,20 +58,24 @@
             // 
             // txtUser
             // 
+            txtUser.Font = new Font("Verdana", 20F);
             txtUser.Location = new Point(37, 99);
             txtUser.Multiline = true;
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(350, 58);
             txtUser.TabIndex = 2;
-            txtUser.TextChanged += textBox1_TextChanged;
+            txtUser.TextChanged += txtUser_TextChanged;
             // 
             // txtSenha
             // 
+            txtSenha.Font = new Font("Verdana", 20F);
             txtSenha.Location = new Point(37, 234);
             txtSenha.Multiline = true;
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(350, 58);
             txtSenha.TabIndex = 3;
+            txtSenha.UseSystemPasswordChar = true;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // btnCadastrar
             // 
@@ -83,10 +87,12 @@
             btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "CADASTRAR";
             btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnLogin
             // 
             btnLogin.BackColor = Color.Lime;
+            btnLogin.Enabled = false;
             btnLogin.Font = new Font("Verdana", 9F, FontStyle.Bold);
             btnLogin.Location = new Point(37, 317);
             btnLogin.Name = "btnLogin";
