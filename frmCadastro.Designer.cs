@@ -39,24 +39,28 @@
             txtUsername = new TextBox();
             lblTelefone = new Label();
             btnLogin = new Button();
-            btnCadastrar = new Button();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
             // txtTelefone
             // 
+            txtTelefone.Font = new Font("Verdana", 18F, FontStyle.Bold);
             txtTelefone.Location = new Point(37, 275);
             txtTelefone.Multiline = true;
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(350, 58);
             txtTelefone.TabIndex = 7;
+            txtTelefone.TextChanged += txtTelefone_TextChanged;
             // 
             // txtUser
             // 
+            txtUser.Font = new Font("Verdana", 18F, FontStyle.Bold);
             txtUser.Location = new Point(37, 63);
             txtUser.Multiline = true;
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(350, 58);
             txtUser.TabIndex = 6;
+            txtUser.TextChanged += txtUser_TextChanged;
             // 
             // lblSenha
             // 
@@ -80,19 +84,25 @@
             // 
             // txtRepeteSenha
             // 
+            txtRepeteSenha.Font = new Font("Verdana", 18F, FontStyle.Bold);
             txtRepeteSenha.Location = new Point(37, 496);
             txtRepeteSenha.Multiline = true;
             txtRepeteSenha.Name = "txtRepeteSenha";
             txtRepeteSenha.Size = new Size(350, 58);
             txtRepeteSenha.TabIndex = 11;
+            txtRepeteSenha.UseSystemPasswordChar = true;
+            txtRepeteSenha.TextChanged += txtRepeteSenha_TextChanged;
             // 
             // txtSenha
             // 
+            txtSenha.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSenha.Location = new Point(37, 381);
             txtSenha.Multiline = true;
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(350, 58);
             txtSenha.TabIndex = 10;
+            txtSenha.UseSystemPasswordChar = true;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // lblRepeteSenha
             // 
@@ -103,7 +113,6 @@
             lblRepeteSenha.Size = new Size(353, 42);
             lblRepeteSenha.TabIndex = 9;
             lblRepeteSenha.Text = "Repita sua senha";
-            lblRepeteSenha.Click += label1_Click;
             // 
             // lblUsername
             // 
@@ -117,11 +126,13 @@
             // 
             // txtUsername
             // 
+            txtUsername.Font = new Font("Verdana", 18F, FontStyle.Bold);
             txtUsername.Location = new Point(37, 169);
             txtUsername.Multiline = true;
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(350, 58);
             txtUsername.TabIndex = 12;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // lblTelefone
             // 
@@ -136,24 +147,28 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.Lime;
+            btnLogin.Enabled = false;
             btnLogin.Font = new Font("Verdana", 9F, FontStyle.Bold);
             btnLogin.Location = new Point(37, 571);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(170, 58);
             btnLogin.TabIndex = 15;
-            btnLogin.Text = "LOGIN";
+            btnLogin.Text = "CADASTRAR";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // btnCadastrar
+            // btnCancelar
             // 
-            btnCadastrar.BackColor = Color.Red;
-            btnCadastrar.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadastrar.Location = new Point(217, 571);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(170, 58);
-            btnCadastrar.TabIndex = 14;
-            btnCadastrar.Text = "CADASTRAR";
-            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCancelar.BackColor = Color.Red;
+            btnCancelar.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = SystemColors.ButtonHighlight;
+            btnCancelar.Location = new Point(217, 571);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(170, 58);
+            btnCancelar.TabIndex = 14;
+            btnCancelar.Text = "CANCELAR";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCadastrar_Click;
             // 
             // frmCadastro
             // 
@@ -161,7 +176,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(429, 645);
             Controls.Add(btnLogin);
-            Controls.Add(btnCadastrar);
+            Controls.Add(btnCancelar);
             Controls.Add(lblTelefone);
             Controls.Add(txtUsername);
             Controls.Add(txtRepeteSenha);
@@ -191,6 +206,6 @@
         private TextBox txtUsername;
         private Label lblTelefone;
         private Button btnLogin;
-        private Button btnCadastrar;
+        private Button btnCancelar;
     }
 }
